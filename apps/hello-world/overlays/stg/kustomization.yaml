@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+namespace: stg
+namePrefix: stg-
+
+# Modificamos la cantidad de réplicas del Deployment original sobre la marcha
+replicas:
+  - name: hello-world-app
+    count: 2

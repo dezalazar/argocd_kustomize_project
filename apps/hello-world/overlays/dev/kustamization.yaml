@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# 1. Le decimos dónde ir a buscar el molde original
+resources:
+  - ../../base
+
+# 2. Forzamos a que todo lo que se genere vaya a este namespace
+namespace: dev
+
+# 3. Le agregamos un prefijo a los nombres para identificarlos rápido en el clúster
+namePrefix: dev-

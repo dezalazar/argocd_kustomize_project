@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-app
+spec:
+  replicas: 1 # Por defecto en la base dejamos 1 sola réplica
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: web-container
+        image: tutum/hello-world:latest # La imagen típica de Hello World (u otra que indique el libro)
+        ports:
+        - containerPort: 80
