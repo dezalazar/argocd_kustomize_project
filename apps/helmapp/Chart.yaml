@@ -1,0 +1,6 @@
+apiVersion: v2
+name: helmapp
+description: Mi primer Helm Chart multi-ambiente
+type: application
+version: 1.0.0
+appVersion: "1.0"

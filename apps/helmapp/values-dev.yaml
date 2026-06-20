@@ -1,0 +1,3 @@
+replicaCount: 1
+namePrefix: dev-
+imageTag: latest  # Usamos la interfaz gráfica a color para dev

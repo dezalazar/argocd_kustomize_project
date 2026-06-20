@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.namePrefix }}helm-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.namePrefix }}helm-world
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namePrefix }}helm-world
+    spec:
+      containers:
+      - name: web-container
+        image: nginxdemos/hello:{{ .Values.imageTag }}
+        ports:
+        - containerPort: 80
