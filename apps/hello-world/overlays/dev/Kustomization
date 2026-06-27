@@ -14,4 +14,4 @@ namePrefix: dev-
 configMapGenerator:
 - name: app-messages
   literals:
-    - config.properties
+    - MESSAGE="Hola Alumnos de ITU - Estamos en el entorno de DEV usando Kustomize"
