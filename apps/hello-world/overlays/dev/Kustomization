@@ -10,3 +10,8 @@ namespace: dev
 
 # 3. Le agregamos un prefijo a los nombres para identificarlos rápido en el clúster
 namePrefix: dev-
+# El generador que aprendimos en este capítulo del libro:
+configMapGenerator:
+- name: app-messages
+  files:
+    - config.properties
