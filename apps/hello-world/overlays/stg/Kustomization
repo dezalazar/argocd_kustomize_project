@@ -11,3 +11,8 @@ namePrefix: stg-
 replicas:
   - name: hello-world-app
     count: 2
+
+configMapGenerator:
+- name: app-messages
+  literals:
+    - MESSAGE="Hola Alumnos de ITU - Estamos en el entorno de STAGING validando la app"

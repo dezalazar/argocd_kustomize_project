@@ -10,3 +10,8 @@ namePrefix: prd-
 replicas:
   - name: hello-world-app
     count: 3
+
+configMapGenerator:
+- name: app-messages
+  literals:
+    - MESSAGE="¡Bienvenidos al entorno de PRODUCCIÓN de ITU! Laboratorio GitOps Kustomize OK"
