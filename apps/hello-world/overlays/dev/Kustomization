@@ -13,5 +13,5 @@ namePrefix: dev-
 # El generador que aprendimos en este capítulo del libro:
 configMapGenerator:
 - name: app-messages
-  files:
+  literals:
     - config.properties
