@@ -1,3 +1,0 @@
-replicaCount: 3
-namePrefix: prd-
-imageTag: plain-text  # Texto plano para producción

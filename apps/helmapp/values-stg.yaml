@@ -1,3 +1,0 @@
-replicaCount: 2
-namePrefix: stg-
-imageTag: plain-text  # Texto plano para testing
