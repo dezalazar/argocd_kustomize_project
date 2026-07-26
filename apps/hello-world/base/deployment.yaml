@@ -29,7 +29,7 @@ spec:
         #      key: MESSAGE
   strategy:
     canary:
-      analysis
+      analysis:
         templates:
           - templateName: success-rate-check
       steps:
