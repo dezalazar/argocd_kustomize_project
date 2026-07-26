@@ -27,18 +27,18 @@ spec:
             configMapKeyRef:
               name: app-messages
               key: MESSAGE
-    strategy:
-      canary:
-        steps:
-          # Paso 1: Enviar solo el 25% del tráfico a la nueva versión
-          - setWeight: 25
-          # Paso 2: Pausa indefinida para que el administrador apruebe la versión
-          - pause: {}
-          # Paso 3: Incrementar al 50%
-          - setWeight: 50
-          # Paso 4: Pausa de 20 segundos para prueba automatizada
-          - pause: { duration: 20s }
-          # Paso 5: Incrementar al 75%
-          - setWeight: 75
-          # Paso 6: Pausa de 10 segundos antes de ir al 100%
-          - pause: { duration: 10s }
+  strategy:
+    canary:
+      steps:
+        # Paso 1: Enviar solo el 25% del tráfico a la nueva versión
+        - setWeight: 25
+        # Paso 2: Pausa indefinida para que el administrador apruebe la versión
+        - pause: {}
+        # Paso 3: Incrementar al 50%
+        - setWeight: 50
+        # Paso 4: Pausa de 20 segundos para prueba automatizada
+        - pause: { duration: 20s }
+        # Paso 5: Incrementar al 75%
+        - setWeight: 75
+        # Paso 6: Pausa de 10 segundos antes de ir al 100%
+        - pause: { duration: 10s }
