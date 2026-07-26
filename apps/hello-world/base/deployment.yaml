@@ -21,12 +21,12 @@ spec:
         image: nginx:alpine
         ports:
         - containerPort: 80
-        env:
-        - name: APP_MESSAGE
-          valueFrom:
-            configMapKeyRef:
-              name: app-messages
-              key: MESSAGE
+        #env:
+        #- name: APP_MESSAGE
+        #  valueFrom:
+        #    configMapKeyRef:
+        #      name: app-messages
+        #      key: MESSAGE
   strategy:
     canary:
       steps:
