@@ -29,11 +29,14 @@ spec:
         #      key: MESSAGE
   strategy:
     canary:
+      analysis
+        templates:
+          - templateName: success-rate-check
       steps:
         # Paso 1: Enviar solo el 25% del tráfico a la nueva versión
         - setWeight: 25
         # Paso 2: Pausa indefinida para que el administrador apruebe la versión
-        - pause: {}
+        - pause: { duration: 15s }
         # Paso 3: Incrementar al 50%
         - setWeight: 50
         # Paso 4: Pausa de 20 segundos para prueba automatizada
