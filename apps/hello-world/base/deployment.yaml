@@ -19,7 +19,7 @@ spec:
       - name: hello-world
         # 🚀 CAMBIAMOS ESTA IMAGEN POR UNA MODERNA Y ESTABLE:
         # image: nginx:alpine
-        image: busybox:latest
+        image: nginxdemos/hello:version-inexistente-que-falla 
         command: ["sh", "-c", "sleep 3600"] # No levanta puerto HTTP 80
         ports:
         - containerPort: 80
