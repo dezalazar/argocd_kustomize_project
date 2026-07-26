@@ -31,7 +31,7 @@ spec:
     canary:
       analysis:
         templates:
-          - templateName: success-rate-check
+          - templateName: dev-success-rate-check
       steps:
         # Paso 1: Enviar solo el 25% del tráfico a la nueva versión
         - setWeight: 25
