@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: PROMPT_MESSAGE
+        - name: APP_MESSAGE
           valueFrom:
             configMapKeyRef:
               name: app-messages
