@@ -6,13 +6,10 @@ spec:
   metrics:
   - name: prometheus-success-rate
     interval: 10s
-    # Debe devolver un resultado >= 0.95 (95% de disponibilidad o éxito)
-    successCondition: result[0] >= 0.95
+    # Evaluamos directamente el valor numérico devuelto por la consulta PromQL
+    successCondition: result >= 0.95
     failureLimit: 1
     provider:
       prometheus:
-        # URL del servicio de Prometheus dentro del clúster
         address: http://prometheus-service.monitoring.svc.cluster.local:9090
-        # Consulta PromQL: Evalúa la disponibilidad promedio del servidor Prometheus
-        query: |
-          scalar(avg(up{job="prometheus"} or vector(1)))
+        query: scalar(avg(up{job="prometheus"} or vector(1)))
