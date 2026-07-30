@@ -30,20 +30,12 @@ spec:
         #      name: app-messages
         #      key: MESSAGE
   strategy:
-    canary:
-      analysis:
-        templates:
-          - templateName: dev-success-rate-check
-      steps:
-        # Paso 1: Enviar solo el 25% del tráfico a la nueva versión
-        - setWeight: 25
-        # Paso 2: Pausa indefinida para que el administrador apruebe la versión
-        - pause: { duration: 15s }
-        # Paso 3: Incrementar al 50%
-        - setWeight: 50
-        # Paso 4: Pausa de 20 segundos para prueba automatizada
-        - pause: { duration: 20s }
-        # Paso 5: Incrementar al 75%
-        - setWeight: 75
-        # Paso 6: Pausa de 10 segundos antes de ir al 100%
-        - pause: { duration: 10s }
+  blueGreen:
+        # Servicio que recibe el tráfico de producción
+        activeService: dev-hello-world-service
+        # Servicio para probar la versión Green antes de promoverla
+        previewService: dev-hello-world-preview-service
+        # Pausa para aprobación manual (o podés usar autoPromotionEnabled: false)
+        autoPromotionEnabled: false
+        # Tiempo que se conserva el entorno viejo en standby por si hay rollback
+        scaleDownDelaySeconds: 30
