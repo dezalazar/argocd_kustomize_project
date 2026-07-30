@@ -30,7 +30,7 @@ spec:
         #      name: app-messages
         #      key: MESSAGE
   strategy:
-  blueGreen:
+    blueGreen:
         # Servicio que recibe el tráfico de producción
         activeService: dev-hello-world-service
         # Servicio para probar la versión Green antes de promoverla
