@@ -32,9 +32,9 @@ spec:
   strategy:
     blueGreen:
         # Servicio que recibe el tráfico de producción
-        activeService: hello-world-service
+        activeService: dev-hello-world-service
         # Servicio para probar la versión Green antes de promoverla
-        previewService: hello-world-preview-service
+        previewService: dev-hello-world-preview-service
         # Pausa para aprobación manual (o podés usar autoPromotionEnabled: false)
         autoPromotionEnabled: false
         # Tiempo que se conserva el entorno viejo en standby por si hay rollback
