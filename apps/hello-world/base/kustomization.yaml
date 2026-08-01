@@ -4,5 +4,6 @@ kind: Kustomization
 # Declaramos qué archivos YAML forman parte de este componente base
 resources:
   - deployment.yaml
+  - service.yaml
   - preview-service.yaml
   - analysis.yaml
